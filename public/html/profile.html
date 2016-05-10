@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="profile"><i class="fa fa-home fa-fw margin-bottom"></i> HOME </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand col-xs-4" ng-click='logout()'> Logout </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<table>
+  <tbody>
+    <tr>
+      <td class='col-xs-6 col-xs-offset-4'>
+        <!-- <h4>{{currentUser | json }}</h4> -->
+        <h1>{{ currentUser.name.first }}</h1>
+        <img ng-src='{{ image }}'/>
+        <br>
+        <h4> {{ aboutMe }} </h4>
+        <br>
+        <div class="text-center" ng-repeat='post in posts'>
+          {{ post.date }}<br>{{ post.post}}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="text-center input-group col-xs-8 col-xs-offset-2">
+          <input ng-model='newpost' type="text" class="form-control" placeholder="What's on your mind?">
+          <span class="input-group-btn">
+            <button class='btn btn-success' type='button' ng-click='newPost(newpost)'>Post</button>
+          </span>
+        </div>
+        <hr>
+      </td>
+    </tr>
+    <hr>
+    <tr>
+      <td>
+        <div class="well col-xs-6 col-xs-offset-4">
+          <p for="post"><b>{{ currentUser.username }} </b>: {{ date }}</p>
+          <hr>
+          <div>
+            {{ post  }}
+          </div>
+          <hr>
+          <button class='btn btn-xs btn-primary' ng-click='toggleLike()' ng-init=' liked="Like"; likeCount = 0' >{{ liked }} : {{ likeCount }}</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

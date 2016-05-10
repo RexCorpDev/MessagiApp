@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <span class="title">
+    <title>
+      xxx
+    </title>
+  </span>
+
+  <span class="links">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" media="screen" title="no title" charset="utf-8">
+    <!-- SweetAlert.css -->
+    <link rel="stylesheet" href="/bower_components/sweetalert/dist/sweetalert.css">
+    <!-- Font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+  </span>
+  <!-- /////////////// -->
+
+  <span class="scripts">
+    <!-- Angular -->
+    <script src="/bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
+
+    <!-- oAuth: satellizer -->
+    <script src="/bower_components/satellizer/satellizer.min.js" charset="utf-8"></script>
+    <!-- angular UI-Bootstrap -->
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js" charset="utf-8"></script>
+
+    <!-- Jquery (for Bootstrap) -->
+    <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+    <!-- SweetAlert -->
+    <script src="/bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="" charset="utf-8"></script>
+
+    <!-- Modules, Controllers, Services -->
+    <script src="js/module.js" charset="utf-8"></script>
+    <script src="js/controllers.js" charset="utf-8"></script>
+    <script src="js/userServices.js" charset="utf-8"></script>
+  </span>
+
+</head>
+
+<body ng-app="messagi">
+
+
+
+  <ui-view>
+
+    <div class="jumbotron text-center" ng-controller='mainCtrl'>
+      <i class="fa fa-send fa-5x fa-fw margin-bottom"></i>
+      <br>
+      <h1 class="text-center">メセジー</h1>
+      <h3>a social network</h3>
+      <h5>me-se-gee ("message")</h5>
+      <br>
+      <button type="button" class='btn btn-lg' ui-sref='home'> Enter </button>
+    </div>
+
+  </ui-view>
+
+</body>
+</html>

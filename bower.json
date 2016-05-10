@@ -1,0 +1,31 @@
+{
+  "name": "messagiApp",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "RexCorpDev <rexcorpfx@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/RexCorpDev/MessagiApp.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "ngSweetAlert": "^1.1.0",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3",
+    "angular-bootstrap": "^1.3.2",
+    "font-awesome": "^4.6.1",
+    "satellizer": "^0.14.0"
+  },
+  "resolutions": {
+    "angular": "1.5.5"
+  }
+}

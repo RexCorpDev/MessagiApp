@@ -1,0 +1,118 @@
+
+<div class="row" >
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="row">
+      <span>
+        <h1>
+          {{ currentState | titlecase }}
+        </h1>
+        <hr>
+      </span>
+      <span class='well col-xs-12 text-center' ng-if='currentState == "sign-up"'>
+        <label>
+          Sign Up Fast: <hr>
+          <a ng-click='authenticate("twitter")'>
+            <i class="fa fa-twitter fa-5x fa-fw margin-bottom"></i>
+          </a>
+          <a ng-click='authenticate("facebook")'>
+            <i class="fa fa-facebook fa-5x fa-fw margin-bottom"></i>
+          </a>
+          <a ng-click='authenticate("github")'>
+            <i class="fa fa-github  fa-5x fa-fw margin-bottom"></i>
+          </a>
+        </label>
+      </span>
+
+      <span class='well col-xs-12 text-center' ng-if='currentState == "login" '>
+        <label>
+          Sign In Fast: <hr>
+          <a ng-click='authenticate("twitter")'>
+            <i class="fa fa-twitter fa-5x fa-fw margin-bottom"></i>
+          </a>
+          <a ng-click='authenticate("facebook")'>
+            <i class="fa fa-facebook fa-5x fa-fw margin-bottom"></i>
+          </a>
+          <a ng-click='authenticate("github")'>
+            <i class="fa fa-github  fa-5x fa-fw margin-bottom"></i>
+          </a>
+        </label>
+      </span>
+
+    </div>
+
+    <hr>
+    <form class="form-inline" ng-submit='submitForm()'>
+      <span  ng-if='currentState === "sign-up"'>
+        <div class="text-left">
+          <h3>NAME: </h3>
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName2">First</label>
+          <input type="text" class="form-control " id="exampleInputName2" placeholder="Jane Doe" ng-model='user.name.first'>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail2">Last</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="" ng-model='user.name.last'>
+        </div>
+      </span>
+
+      <span ng-if='currentState === "login"'>
+        <div class="text-left">
+          <h3>Username: </h3>
+          <input type="text" class="form-control" required ng-model='user.username'>
+          <br>
+        </div>
+        <div class="form-group">
+          <h3>Password</h3>
+          <input type="password" class="form-control" required ng-model='user.password'>
+        </div>
+        <hr>
+        <div class="form-group">
+          <button class="btn btn-primary btn-lg" ng-click='submitForm()'>{{currentState | titlecase }}</button>
+        </div>
+      </span>
+
+    </form>
+
+
+
+    <form ng-submit='submitSignUp()'  ng-if='currentState == "sign-up"'>
+
+      <hr>
+      <div class="form-group">
+        <h3>Email</h3>
+        <input type="text" class='form-control' required ng-model='user.email' placeholder="john.smith@xyz.com">
+      </div>
+
+      <div class="form-group">
+        <h3>Password</h3>
+        <input type="password" class="form-control" required ng-model='user.password'>
+      </div>
+
+      <div class="form-group">
+        <h3>Password (again)</h3>
+        <input type="password" class="form-control" required ng-model='user.password2'>
+      </div>
+
+      <div class="form-group">
+        <h3>About</h3>
+        <input type="text" class="form-control" ng-model='user.about' placeholder="Tell us a little about yourself.">
+      </div>
+
+
+      <div class="form-group" >
+        <h3 class='file'>Avatar</h3>
+        <input type="text" class="form-control" ng-model='user.image.link' placeholder="Insert URL or Choose File">
+      </div>
+      <label class="file" >
+        <input type="file" id="file" ng-model='user.image.file'>
+        <span class="file-custom" ></span>
+      </label>
+
+      <button class="btn btn-primary">{{currentState | titlecase }}</button>
+    </form>
+
+
+  </div>
+</div>

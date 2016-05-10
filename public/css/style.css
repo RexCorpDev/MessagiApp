@@ -1,0 +1,36 @@
+a {
+  color: #454545;
+}
+
+button.add-property, button.add-client{
+  font-size: 12px;
+  margin-bottom: -50px;
+}
+
+button.create {
+  background-color: #3c8f49;
+  border-color: #80ff00;
+  font-weight: 400;#61ff00
+  color: #ffffff;
+  padding: 5px 15px;
+  font-size: 30px;
+  -webkit-border-radius: 3%;
+  -moz-border-radius: 3%;
+  border-radius: 5%;
+}
+
+.table>tbody>tr>td {
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+
+i.add-property, i.add-client, i.add-data {
+    content: "\f1c0";
+    margin-left: 20px;
+}
+
+div.container.data-table {
+  width: 1500px;
+  font-size: 10px;
+}

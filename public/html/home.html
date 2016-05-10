@@ -1,0 +1,59 @@
+<div class="container-fluid container" ng-controller='homeCtrl'>
+  <div class="row text-center jumbotron">
+
+    <!-- NOT Signed in -->
+    <span ng-hide='isAuthenticated()'>
+      <button class="btn btn-default btn-lg" ui-sref='login'>
+        Login
+      </button>
+      <button class="btn btn-default btn-lg" ui-sref='sign-up'>
+        Sign Up
+      </button>
+    </span>
+
+    <!-- signed in -->
+
+    <span ng-show='isAuthenticated()'>
+      <!-- <button class='btn btn-default btn-lg' ui-sref='home'><i class="fa fa-home  fa-fw margin-bottom"></i></button> -->
+      <!-- <button class='btn btn-default btn-lg' ui-sref='profile'>Profile</button> -->
+      <button class='btn btn-default btn-lg' ng-click='logout()'>logout</button>
+      <hr>
+      <h4> Hi, {{ currentUser.username }} </h4>
+    </span>
+
+  </div>
+</div>
+
+<div class="container-fluid container" ng-controller='postsCtrl'>
+  <div class="row jumbotron message-board">
+
+    <!-- MAKE POST -->
+    <span ng-show='isAuthenticated()' ng-model='newpost'>
+      <div class="text-center input-group col-xs-8 col-xs-offset-2">
+        <input ng-model='postBody' type="text" class="form-control" placeholder="What's on your mind?">
+        <span class="input-group-btn">
+          <button class='btn btn-success' type='button' ng-click='newPost(postBody)'>Post</button>
+        </span>
+      </div>
+    </span>
+    <hr>
+
+    <!-- ALL POSTS -->
+    <span ng-repeat=' post in posts '>
+      <div class="well col-xs-8 col-xs-offset-2" id='{{ post.id }}'>
+        <div>
+          <p>
+          </p>
+          <b class='text-left'>asdf{{ post.username }} </b> <span class='text-right'>asdf{{ post.date }}</span>
+        </div>
+        <div class="text-left">
+          asdf{{ post.post }}
+        </div>
+        <div class="like">
+          <button class='text-left btn btn-xs btn-primary'><i class="fa fa-thumbs-up"></i> Like {{}} </button>
+        </div>
+      </div>
+    </span>
+
+  </div>
+</div>
